@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS Flower Detection</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background: 
+                linear-gradient(135deg, rgba(58, 123, 213, 0.7), rgba(58, 213, 197, 0.7)),
+                url('https://source.unsplash.com/1600x900/?flowers') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            color: ivory;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5); /* Transparent black box for better text visibility */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #f6e58d;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .subtitle {
+            color: #ffbe76;
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        .input-field {
+            margin: 15px 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: #f8c291;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ced6e0;
+            margin-top: 5px;
+            font-size: 1em;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        input[type="submit"] {
+            background-color: #eb4d4b;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff7979;
+        }
+
+        .flower-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <center>
+            <h1>🌸 IRIS FLOWER DETECTION 🌸</h1>
+            <p class="subtitle">Classify the flower species based on the given values</p>
+            <br>
+            <!-- Form for input -->
+            <form method="POST" action="{{url_for('home')}}">
+                <div class="input-field">
+                    <label>First value (Sepal Length):</label>
+                    <input type="text" name="a" placeholder="Enter Sepal Length" required>
+                </div>
+                <div class="input-field">
+                    <label>Second value (Sepal Width):</label>
+                    <input type="text" name="b" placeholder="Enter Sepal Width" required>
+                </div>
+                <div class="input-field">
+                    <label>Third value (Petal Length):</label>
+                    <input type="text" name="c" placeholder="Enter Petal Length" required>
+                </div>
+                <div class="input-field">
+                    <label>Fourth value (Petal Width):</label>
+                    <input type="text" name="d" placeholder="Enter Petal Width" required>
+                </div>
+                <br>
+                <input type="submit" value="🌼 Predict! 🌼" class="btn">
+            </form>
+
+            <!-- Optional: Display a flower image at the bottom -->
+            <!-- <img src="{{ url_for('static', filename='flower1.jpg') }}" alt="Flower Image" class="flower-image"> -->
+        </center>
+    </div>
+
+</body>
+</html>
